@@ -1,0 +1,31 @@
+{
+  "manifest_version": 2,
+  "name": "Copy Address To Clipboard And Title (CATCAT)",
+  "version": "1.0",
+  "description": "Copies the title and address (URL) of a web page to the clipboard.",
+  "default_locale": "en",
+  "icons": {
+    "48": "icons/border-48.png"
+  },
+  "permissions": [
+    "contextMenus",
+    "clipboardWrite",
+    "activeTab",
+    "notifications"
+  ],
+  "background": {
+    "scripts": [
+      "background.js"
+    ]
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "<all_urls>"
+      ],
+      "js": [
+        "catcat.js"
+      ]
+    }
+  ]
+}
